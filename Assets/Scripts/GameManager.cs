@@ -83,12 +83,12 @@ public class GameManager : MonoBehaviour
         /*
         for (int s=0; s<6; s++)                                             // Play through all notes as a test run - comment out for builds
         {
-            for (int n=0; n<16; n++)
+            for (int n=0; n<=16; n++)
             {
                 _timeInterval = 1;
                 NoteText.text = Notes.GetValueOrDefault(n);
-                if (_playTone) StartCoroutine(PlayNote(n));
                 StringText.text = GuitarStrings.GetValueOrDefault(s);
+                if (_playTone) StartCoroutine(PlayNote(n));
                 yield return new WaitForSeconds(1);
             }
         }
@@ -153,7 +153,7 @@ public class GameManager : MonoBehaviour
                 break;
 
             case 4:
-                if (actualNote < 11) actualNote += 12;   // Octave up if lower than G (?)
+                if (actualNote < 10) actualNote += 12;   // Octave up if lower than G (?)
                 break;
 
             case 5:
